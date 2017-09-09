@@ -5,3 +5,7 @@ Creating a serverless application with AWS and ReactJS.
 * Brew
 * git & github
 * ssh
+* HTML
+* CSS
+* Font Awesome
+* Google Fonts
