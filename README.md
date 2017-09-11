@@ -9,3 +9,5 @@ Creating a serverless application with AWS and ReactJS.
 * CSS
 * Font Awesome
 * Google Fonts
+* Amazon S3
+* AWS Codebuild
