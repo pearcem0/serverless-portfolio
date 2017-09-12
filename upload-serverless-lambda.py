@@ -14,12 +14,12 @@ def lambda_handler(event, context):
 
     # check to see if the job was triggered by codepipeline
     try:
-        job = event.get('CodePipeline.job')
+        job = event.get("CodePipeline.job")
         if job:
             print "Lambda triggered from codepipeline event"
-            for artifact in job["data"],["inputArtifacts"]:
-                if artifact["Name"] == "MyAppBuild":
-                    location = artifact["location"],["s3Location"]
+            for artifact in job["data"]["inputArtifacts"]:
+                if artifact["name"] == "MyAppBuild":
+                    location = artifact["location"]["s3Location"]
         print "Building portfolio from " + str(location)
 
         s3 = boto3.resource('s3')
@@ -41,15 +41,14 @@ def lambda_handler(event, context):
 
         if job:
             codepipeline = boto3.client('codepipeline')
-            codepipline.put_job_success_result(jobId=job["id"])
+            codepipeline.put_job_success_result(jobId=job["id"])
         topic.publish(Subject="Serverless Portfolio", Message="Serverless Portfolio Deployed Successfully")
         print "Job Complete."
 
     except:
-        if job:
-            codepipeline = boto3.client('codepipeline')
-            codepipeline.put_job_failure_result(jobId=job["id"])
-
+        #if job:c
+        #    codepipeline = boto3.client('codepipeline')
+        #    codepipeline.put_job_failure_result(jobId=job["id"], failureDetails=message["JobFailed"])
         topic.publish(Subject="Serverless Portfolio Deployment Failed", Message="Serverless Portfolio Not Deployed Successfully")
 
         raise
