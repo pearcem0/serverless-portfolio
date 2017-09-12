@@ -13,4 +13,5 @@ Creating a serverless application with AWS and ReactJS.
 * Amazon S3
 * Amazon SNS
 * AWS Codebuild
+* AWS CodePipeline
 * AWS Lambda
