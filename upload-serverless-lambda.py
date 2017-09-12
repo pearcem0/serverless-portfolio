@@ -14,7 +14,7 @@ def lambda_handler(event, context):
 
     # check to see if the job was triggered by codepipeline
     try:
-        job = event.get('codepipeline.job')
+        job = event.get('CodePipeline.job')
         if job:
             print "Lambda triggered from codepipeline event"
             for artifact in job["data"],["inputArtifacts"]:
@@ -48,10 +48,9 @@ def lambda_handler(event, context):
     except:
         if job:
             codepipeline = boto3.client('codepipeline')
-            codepipline.put_job_failure_result(jobId=job["id"])
+            codepipeline.put_job_failure_result(jobId=job["id"])
 
         topic.publish(Subject="Serverless Portfolio Deployment Failed", Message="Serverless Portfolio Not Deployed Successfully")
 
         raise
         print "Job not successful."
-        
