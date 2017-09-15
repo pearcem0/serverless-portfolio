@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Equal and opposite Reactions</title>
+
+  </head>
+  <body>
+    <main id="content"></main>
+
+    <script src="https://unpkg.com/babel-standalone"></script>
+    <script src="https://unpkg.com/react@15.3.1/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
+
+    <script type="text/babel" data-presets="react">
+      // ask React to render the content
+      // two inputs - the div, and the content where you want to render it
+      // this looks like html in js.. this is jsx (java script extensions)
+      ReactDOM.render(<div>Hello, React!</div>, document.getElementById('content'));
+    </script>
+
+  </body>
+</html>
