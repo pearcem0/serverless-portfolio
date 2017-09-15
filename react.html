@@ -3,7 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Equal and opposite Reactions</title>
+    <style media="screen">
+    <!-- style for message box and style for error -->
+      .MessageBox {
+        margin: 1em;
+        padding: 2em;
+      }
 
+      .error{
+        border: 1px solid red;
+        background-color: #eeebbb;
+      }
+
+      .success{
+        border: 1px solid blue;
+        background-color: #bbeebb;
+      }
+
+      .hidden{
+        display: none;
+      }
+
+    </style>
   </head>
   <body>
     <main id="content"></main>
@@ -13,11 +34,35 @@
     <script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
 
     <script type="text/babel" data-presets="react">
-      // ask React to render the content
-      // two inputs - the div, and the content where you want to render it
-      // this looks like html in js.. this is jsx (java script extensions)
-      ReactDOM.render(<div>Hello, React!</div>, document.getElementById('content'));
-    </script>
+    // ask React to render the content
+// two inputs - the div, and the content where you want to render it
+// this looks like html in js.. this is jsx (java script extensions)
 
+// component should start with a capital letter
+class NameInput extends React.Component {
+  // every component needs a render function
+  render() {
+    return (
+      <div>
+      <label> Insert Name: <input type="text"/></label>
+      <button>Click here</button>
+
+      <MessageBox />
+      </div>
+    )
+  }
+}
+
+class MessageBox extends React.Component {
+  render () {
+    return (
+      <div className="messageBox error">
+        This message
+      </div>
+    )
+  }
+}
+ReactDOM.render(<NameInput />, document.getElementById("content"));
+</script>
   </body>
 </html>
