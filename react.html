@@ -40,14 +40,28 @@
 
 // component should start with a capital letter
 class NameInput extends React.Component {
+  // intialise in a constructor that gets called when the the component is created.
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        message: {
+          type: "success",
+          body: "Now my message is in NameInput's State"
+       }
+    }
+  }
   // every component needs a render function
   render() {
+
+    let msg = this.state.message;
+
     return (
       <div>
       <label> Insert Name: <input type="text"/></label>
       <button>Click here</button>
 
-      <MessageBox />
+      <MessageBox type={msg.type} message={msg.body}/>
       </div>
     )
   }
@@ -56,7 +70,9 @@ class NameInput extends React.Component {
 class MessageBox extends React.Component {
   render () {
     return (
-      <div className="messageBox error">
+      // if we get a prop(erty) type then use it, if not hidden is default
+      <div className={"messageBox " + (this.props.type || "hidden")}>
+        {this.props.message}
         This message
       </div>
     )
