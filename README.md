@@ -18,3 +18,4 @@ Creating a serverless application with AWS and ReactJS.
 * babel
 * ReachJS
 * Chai
+* Mocha

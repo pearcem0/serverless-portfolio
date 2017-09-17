@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Equal and opposite Reactions</title>
+
+    <link rel="stylesheet" href="css/mocha.css">
+
     <style media="screen">
     <!-- style for message box and style for error -->
       .MessageBox {
@@ -29,10 +32,14 @@
   <body>
     <main id="content"></main>
 
+    <!-- add content area for mocha test framework results -->
+    <div id="mocha"></div>
+
     <script src="js/babel-standalone"></script>
     <script src="js/react.min.js"></script>
     <script src="js/react-dom.min.js"></script>
     <script src="js/chai.js"></script>
+    <script src="js/mocha.js"></script>
 
     <script type="text/babel" data-presets="react">
     // ask React to render the content
@@ -51,14 +58,14 @@ class NameInput extends React.Component {
         type: undefined,
         body: undefined
       }
-    }
+    };
     // bind button click in the constructor, so that it has access to object
     // do this every time we need an event handler
     this.buttonClicked = this.buttonClicked.bind(this);
   }
 
   // render is usually best at the bottom, so put button event here
-  buttonClicked (evt) {
+  buttonClicked(evt) {
     let name = this.refs.nameInput.value;
 
     this.setState({
@@ -76,10 +83,13 @@ class NameInput extends React.Component {
 
     return (
       <div>
-        <label>Insert Name: <input ref="nameInput" type="text" />
+        <label>
+          Insert Name: <input ref="nameInput" type="text" />
         </label>
-        <button onClick={this.buttonClicked}>Click here</button>
-
+        // add id to button to make it easier to find in the tests etc.
+        <button id="inputButton" onClick={this.buttonClicked}>
+          Click here
+        </button>
         <MessageBox type={msg.type} message={msg.body} />
       </div>
     );
@@ -100,18 +110,60 @@ ReactDOM.render(<NameInput />, document.getElementById("content"));
 </script>
 
 <script type="text/babel" data-preset="react">
-  const assert = chai.assert;
-  // this won't show in the console because it passes
-  assert.equal(5, 3+2, "Math works!")
-  // this will show in the console because it fails
-  assert.notEqual(5, 3+2 "You've failed math.")
-  assert.closeTo(Math.PI, 3, .2, "Pi is close")
-  assert.isDefined(messageBox, "Message box is defined")
+const assert = chai.assert;
 
-  let myName = "Mike";
-  const greeting = (name) => "Hello " + name + "!";
+// add mocha (behaviour driven development)
+mocha.ui("bdd");
+mocha.reporter("html");
 
-  assert.include(greeing, myName, "Greeting includes name")
+// each set of tests below are defined with an anon func
+
+describe("Set of chai tests, served with mocha", () => {
+  it("Prove math works", () => {
+    // with chai only, this won't show in the console because it passes
+    assert.equal(5, 3 + 2, "Math works!");
+    // this will show in the console because it fails
+    assert.notEqual(6, 3 + 2, "Math still works!");
+    assert.closeTo(Math.PI, 3, 0.2, "Pi is close");
+  });
+
+  it("Found our component", () => {
+    assert.isDefined(MessageBox, "Message box is defined");
+  });
+
+  it("I am greeted correctly", () => {
+    let myName = "Mike";
+    const greeting = name => "Hello " + name + "!";
+
+    assert.include(greeting(myName), myName, "Greeting includes name");
+  });
+});
+
+// add a new set of tests to test the react document
+describe("Test the document", () => {
+  it("Rendered empty msg box on load", () => {
+    // querySelector is a bit like getByID but more flexible
+    // target the thing that has the msgBox class (the div)
+    // .messageBox will return the element with that class
+    let msgBox = document.querySelector(".messageBox");
+    assert.isDefined(msgBox, "Message box is defined");
+    // check it is hidden
+    assert.include(msgBox.classList.value, "hidden", "class is hidden");
+    // check the test is empty (undefined)
+    assert.equal(msgBox.innerText, "", "is text empty");
+  });
+  it("Renders error when empty", () => {
+    // we need to simulate an action
+    let msgBox = document.querySelector(".messageBox");
+    // find by id using hash
+    let button = document.querySelector("#inputButton");
+    button.click();
+    assert.include(msgBox.classList.value, "error", "class is error");
+  });
+});
+
+// tell mocha to run tests
+mocha.run();
 </script>
   </body>
 </html>
