@@ -45,37 +45,54 @@ class NameInput extends React.Component {
     super(props);
 
     this.state = {
-        message: {
-          type: "success",
-          body: "Now my message is in NameInput's State"
-       }
+      message: {
+        // because no value, it will default to hidden
+        type: undefined,
+        body: undefined
+      }
     }
+    // bind button click in the constructor, so that it has access to object
+    // do this every time we need an event handler
+    this.buttonClicked = this.buttonClicked.bind(this);
   }
+
+  // render is usually best at the bottom, so put button event here
+  buttonClicked (evt) {
+    let name = this.refs.nameInput.value;
+
+    this.setState({
+      message: {
+        // ?  is a ternerary option - if name has a value put success else err
+        type: name ? "success" : "error",
+        body: name ? "welcome to React, " + name : "Please enter a name."
+      }
+    });
+  }
+
   // every component needs a render function
   render() {
-
     let msg = this.state.message;
 
     return (
       <div>
-      <label> Insert Name: <input type="text"/></label>
-      <button>Click here</button>
+        <label>Insert Name: <input ref="nameInput" type="text" />
+        </label>
+        <button onClick={this.buttonClicked}>Click here</button>
 
-      <MessageBox type={msg.type} message={msg.body}/>
+        <MessageBox type={msg.type} message={msg.body} />
       </div>
-    )
+    );
   }
 }
 
 class MessageBox extends React.Component {
-  render () {
+  render() {
     return (
       // if we get a prop(erty) type then use it, if not hidden is default
       <div className={"messageBox " + (this.props.type || "hidden")}>
         {this.props.message}
-        This message
       </div>
-    )
+    );
   }
 }
 ReactDOM.render(<NameInput />, document.getElementById("content"));
