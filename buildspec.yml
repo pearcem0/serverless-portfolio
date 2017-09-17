@@ -6,7 +6,7 @@ phases:
       - echo nothing to build here
 artifacts:
   files:
-    - index.html
+    - *.html
     - favicon.ico
     - styles/main.css
     - images/*
