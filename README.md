@@ -15,3 +15,6 @@ Creating a serverless application with AWS and ReactJS.
 * AWS Codebuild
 * AWS CodePipeline
 * AWS Lambda
+* babel
+* ReachJS
+* Chai

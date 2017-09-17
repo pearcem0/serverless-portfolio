@@ -32,6 +32,7 @@
     <script src="js/babel-standalone"></script>
     <script src="js/react.min.js"></script>
     <script src="js/react-dom.min.js"></script>
+    <script src="js/chai.js"></script>
 
     <script type="text/babel" data-presets="react">
     // ask React to render the content
@@ -96,6 +97,21 @@ class MessageBox extends React.Component {
   }
 }
 ReactDOM.render(<NameInput />, document.getElementById("content"));
+</script>
+
+<script type="text/babel" data-preset="react">
+  const assert = chai.assert;
+  // this won't show in the console because it passes
+  assert.equal(5, 3+2, "Math works!")
+  // this will show in the console because it fails
+  assert.notEqual(5, 3+2 "You've failed math.")
+  assert.closeTo(Math.PI, 3, .2, "Pi is close")
+  assert.isDefined(messageBox, "Message box is defined")
+
+  let myName = "Mike";
+  const greeting = (name) => "Hello " + name + "!";
+
+  assert.include(greeing, myName, "Greeting includes name")
 </script>
   </body>
 </html>
