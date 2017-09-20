@@ -3,7 +3,9 @@ version: 0.1
 phases:
   build:
     commands:
-      - echo nothing to build here
+      # install dependencies
+      - npm install
+      - npm run webpack
 artifacts:
   files:
     - index.html
@@ -12,4 +14,4 @@ artifacts:
     - favicon.ico
     - styles/main.css
     - images/*
-    - js/*
+    - dist/bundle.js
