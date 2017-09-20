@@ -36,7 +36,7 @@ def lambda_handler(event, context):
                 obj = myzip.open(nm)
                 portfolio_bucket.upload_fileobj(obj, nm,
                 # Remember mimetypes guesses using file extension so make sure exists!
-                ExtraArgs={'ContentType': mimetypes.guess_type(nm)[0]})
+                ExtraArgs={'contentType': mimetypes.guess_type(nm)[0]})
                 portfolio_bucket.Object(nm).Acl().put(ACL='public-read')
 
         if job:
