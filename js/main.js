@@ -1,6 +1,8 @@
-import 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+// import new custom react component
+import ExampleWork from './example-work';
 
-// for good measure (and practice) at this point
-console.log("loaded React-dom");
+console.log("logging");
 
-console.log("webpack is watching");
+ReactDOM.render(<ExampleWork />, document.getElementById('example-work'));
