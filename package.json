@@ -1,0 +1,30 @@
+{
+  "name": "serverless-portfolio",
+  "version": "1.0.0",
+  "description": "My serverless practice portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "webpack-watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pearcem0/serverless-portfolio.git"
+  },
+  "author": "Michael Pearce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pearcem0/serverless-portfolio/issues"
+  },
+  "homepage": "https://github.com/pearcem0/serverless-portfolio#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.6.0"
+  }
+}
