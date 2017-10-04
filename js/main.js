@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 // import new custom react component
 import ExampleWork from './example-work';
 
-console.log("logging");
-
 const myWork = [
   {
     'title': "All You Need",
