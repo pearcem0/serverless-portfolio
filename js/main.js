@@ -6,6 +6,8 @@ import ExampleWork from './example-work';
 const myWork = [
   {
     'title': "All You Need",
+    'href': "rootofpi.co.uk",
+    'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     'image': {
       'desc': "example image of a cat.",
       'source': "images/example3.png",
@@ -15,6 +17,8 @@ const myWork = [
   },
   {
     'title': "AWS Lambda Snapshot Backup & Prune",
+    'href': "rootofpi.co.uk",
+    'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     'image': {
       'desc': "example screenshot of a project involving code",
       'source': "images/example1.png",
@@ -23,6 +27,8 @@ const myWork = [
   },
   {
     'title': "Salesforce Administration Areas",
+    'href': "serverless.rootofpi.co.uk",
+    'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     'image': {
       'desc': "chemistry shots",
       'source': "images/example2.png",
