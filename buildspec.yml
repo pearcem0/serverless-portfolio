@@ -10,7 +10,7 @@ phases:
   build:
     commands:
       - "npm run webpack"
-  pre-build:
+  pre_build:
     commands:
       - "npm install"
       - "npm test"
