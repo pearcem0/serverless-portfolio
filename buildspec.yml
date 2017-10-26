@@ -1,14 +1,4 @@
-version: 0.1
-
-phases:
-  pre-build:
-    commands:
-      - npm install
-      - npm test
-  build:
-    commands:
-      # install dependencies
-      - npm run webpack
+---
 artifacts:
   files:
     - index.html
@@ -16,3 +6,12 @@ artifacts:
     - styles/main.css
     - images/*
     - dist/bundle.js
+phases:
+  build:
+    commands:
+      - "npm run webpack"
+  pre-build:
+    commands:
+      - "npm install"
+      - "npm test"
+version: 0.1
