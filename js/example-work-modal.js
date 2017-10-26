@@ -4,10 +4,17 @@ class ExampleWorkModal extends React.Component {
 
   render() {
     let example = this.props.example;
+    let modalClass = this.props.open ? 'modal--open' : 'modal--closed';
 
     return (
-          <div className="background--skyBlue modal--closed">
-            <span className="color--cloud modal__closeButton">
+          // remember anything in curly braces in jsx can be any js expression
+          // so concat 2 strings to get full and dynamic class name
+          <div className={"background--skyBlue " + modalClass}>
+            <span className="color--cloud modal__closeButton"
+            // since we are not passing in any extra data it is much simplier
+            // then the openModal onclick handler which needed to delegate a function
+            onClick={ this.props.closeModal}
+            >
               <i className="fa fa-window-close-o"></i>
             </span>
             <img alt={ example.image.desc }
