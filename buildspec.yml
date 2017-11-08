@@ -6,7 +6,9 @@ artifacts:
     - styles/*
     - images/*
     - dist/bundle.js
-    - js/*
+    - js/main.js
+    - js/example-work.js
+    - js/example-work-modal.js
 phases:
   build:
     commands:
