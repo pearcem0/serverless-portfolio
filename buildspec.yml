@@ -6,6 +6,7 @@ artifacts:
     - styles/*
     - images/*
     - dist/bundle.js
+    - js/*
 phases:
   build:
     commands:
