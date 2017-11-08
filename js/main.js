@@ -6,36 +6,49 @@ import ExampleWork from './example-work';
 const myWork = [
   {
     'title': "All You Need",
-    'href': "rootofpi.co.uk",
-    'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    'href': "https://www.github.com/pearcem0/all-you-need-window-manager",
+    'desc': "FVWM based window manager. Powerful yet disctraction free. Lightweight, (sort of) customisable. Encourages the user to a. Use the command line more, and b. fix what they don't like about the window manager themselves by customising the FVWM Script.",
     'image': {
-      'desc': "example image of a cat.",
-      'source': "images/example3.png",
-      'comment': `“Bengal cat” by roberto shabs is licensed under CC BY 2.0
-           https://www.flickr.com/photos/37287295@N00/2540855181`
+      'desc': "",
+      'source': "images/ayn.png",
+      'comment': ""
     }
-  },
-  {
+  }, {
     'title': "AWS Lambda Snapshot Backup & Prune",
-    'href': "rootofpi.co.uk",
-    'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    'href': "https://www.github.com/pearcem0/aws-backup-lambda",
+    'desc': "AWS lambda scripts to run weekly backup snapshots and additional pruning of old snapshots. Scripts written in python.",
     'image': {
-      'desc': "example screenshot of a project involving code",
-      'source': "images/example1.png",
-      'comment': "probably doesn't even compile"
+      'desc': "",
+      'source': "images/aws.png",
+      'comment': ""
     }
-  },
-  {
+  }, {
     'title': "Salesforce Administration Areas",
-    'href': "serverless.rootofpi.co.uk",
-    'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    'href': "https://www.github.com/pearcem0/salesforce-adminareas",
+    'desc': "Map administrative area information to a custom salesforce object using the records post code and external api calls.",
     'image': {
-      'desc': "chemistry shots",
-      'source': "images/example2.png",
+      'desc': "",
+      'source': "images/sf.png",
       // use backticks to use javascript template string, on multi line
-      'comment': `“Chemistry” by Surian Soosay is licensed under CC BY 2.0
-          https://www.flickr.com/photos/ssoosay/4097410999 `
+      'comment': ""
     }
   }
 ]
-ReactDOM.render(<ExampleWork work={myWork}/>, document.getElementById('example-work'));
+ReactDOM.render(
+  <ExampleWork work={myWork}/>, document.getElementById('example-work'));
+
+function ResponsiveImage({src, width, height}) {
+  return (
+    <div style={{
+      width
+    }} className="responsive-image">
+      <div style={{
+        paddingBottom: (height / width * 100) + '%'
+      }}/>
+      <img src={src} className="responsive-image__image"/>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <ResponsiveImage src="images/serverless_diagram.png" width={1200} height={800}/>, document.getElementById('serverlessDiagram'));

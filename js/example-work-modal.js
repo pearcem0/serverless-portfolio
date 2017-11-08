@@ -9,7 +9,7 @@ class ExampleWorkModal extends React.Component {
     return (
           // remember anything in curly braces in jsx can be any js expression
           // so concat 2 strings to get full and dynamic class name
-          <div className={"background--skyBlue " + modalClass}>
+          <div className={"background--purple " + modalClass}>
             <span className="color--cloud modal__closeButton"
             // since we are not passing in any extra data it is much simplier
             // then the openModal onclick handler which needed to delegate a function
@@ -24,7 +24,7 @@ class ExampleWorkModal extends React.Component {
               <h2 className="modal__title">
                 { example.title }
               </h2>
-              <a className="color--skyBlue modal__link"
+              <a className="color--purple modal__link"
                  href={ example.href }>
                 Check it out
               </a>

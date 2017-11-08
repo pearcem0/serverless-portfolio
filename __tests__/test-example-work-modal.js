@@ -33,8 +33,8 @@ describe("ExampleWorkModal component", () => {
   });
 
   it("should have the modal class set correctly", () => {
-    expect(component.find(".background--skyBlue").hasClass("modal--closed")).toBe(true);
-    expect(opencomponent.find(".background--skyBlue").hasClass("modal--open")).toBe(true);
+    expect(component.find(".background--purple").hasClass("modal--closed")).toBe(true);
+    expect(opencomponent.find(".background--purple").hasClass("modal--open")).toBe(true);
   });
 
   it("Should call the closeModal handler when button is clicked", () => {

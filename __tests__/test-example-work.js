@@ -12,8 +12,7 @@ const myWork = [
     image: {
       desc: "example image of a cat.",
       source: "images/example3.png",
-      comment: `“Bengal cat” by roberto shabs is licensed under CC BY 2.0
-           https://www.flickr.com/photos/37287295@N00/2540855181`
+      comment: "the internet loves cats"
     }
   },
   {
