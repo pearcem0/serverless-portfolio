@@ -3,7 +3,7 @@ artifacts:
   files:
     - index.html
     - favicon.ico
-    - styles/main.css
+    - styles/*
     - images/*
     - dist/bundle.js
 phases:
