@@ -10,6 +10,8 @@ including ReactJS, babel, jest, enzyme, python and an array of AWS services. The
 
 `npm run webpack`
 
+`ws` 
+
 Open _index.html_
 
 # Technologies used
@@ -17,6 +19,7 @@ Open _index.html_
 * Brew
 * git & github
 * ssh
+* ws - a Node.js WebSocket library
 
 ## Web-dev
 * HTML
