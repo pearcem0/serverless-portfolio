@@ -3,6 +3,8 @@ Creating a serverless application with AWS and ReactJS.
 Inspired by the online course by [acloud.guru](https://acloud.guru) this is an introduction to ReactJS development, developed and built with a 'serverless' workflow. The technical portfolio utilises technologies, frameworks and services
 including ReactJS, babel, jest, enzyme, python and an array of AWS services. The source code is openely available on [github.com/pearcem0](https://www.github.com/pearcem0/serverless-portfolio).
 
+![](images/serverless_diagram.png)
+
 # Usage
 `npm install`
 
