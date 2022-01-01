@@ -10,9 +10,12 @@ including ReactJS, babel, jest, enzyme, python and an array of AWS services. The
 
 `npm test`
 
-`npm run webpack`
+`npm run webpack` - see [webpack repo](https://github.com/yhat/ws) for installation and more info.
 
-`ws` 
+Server the content:
+`ws` [ws repo](https://github.com/yhat/ws)
+or `local-web-server` [npm package](https://www.npmjs.com/package/local-web-server)
+or `serve` [npm package](https://www.npmjs.com/package/serve)
 
 Open _index.html_
 
